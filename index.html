@@ -1,0 +1,416 @@
+<html>
+    <head>
+        <title>악보</title>
+        <style>
+            .nopnat{
+                width: 40px;
+                height: 118px;
+            }
+            .box { width: 100%; height: 0px; margin: 0px auto; position: relative; }
+            .in {  position: absolute; top: 125px; left: 0%;}
+            .in2 { opacity: 80%; position: absolute; top: 2px; left: 75px;}
+            .in3 { opacity: 80%; position: absolute; top: 2px; left: 115px;}
+            .in4 { opacity: 80%; position: absolute; top: 2px; left: 155px;}
+            .in5 { opacity: 80%; position: absolute; top: 2px; left: 195px;}
+            .in6 { opacity: 80%; position: absolute; top: 2px; left: 235px;}
+            .in7 { opacity: 80%; position: absolute; top: 2px; left: 275px;}
+            .in8 { opacity: 80%; position: absolute; top: 2px; left: 315px;}
+            .in9 { opacity: 80%; position: absolute; top: 2px; left: 355px;}
+            .in10 { opacity: 80%; position: absolute; top: 2px; left: 395px;}
+            .in11 { opacity: 80%; position: absolute; top: 2px; left: 435px;}
+            .in12 { opacity: 80%; position: absolute; top: 2px; left: 475px;}
+            .in13 { opacity: 80%; position: absolute; top: 2px; left: 515px;}
+            .in14 { opacity: 80%; position: absolute; top: 2px; left: 555px;}
+            .in15 { opacity: 80%; position: absolute; top: 2px; left: 595px;}
+            .in16 { opacity: 80%; position: absolute; top: 2px; left: 635px;}
+            hr{
+                margin-top:0.75px;
+                color: #111111;
+            }
+            .jum{
+                border-style: dashed;
+                color: #dddddd;
+            }
+            body{
+                background-color: #eeeeee;
+            }
+            .btn{
+                color: white;
+                height: 13.9px;
+                font-size: 1px;
+                margin-bottom: 1px;
+                background-color: #e5e5e5;
+                border: white 0.2px solid;
+            }
+        </style>
+        <script>
+            b=1;
+            c=100;
+            key2=0;
+            var on = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+            var key1 = new Array('시','도_','시_','라_','솔_','파_','미_','레_','도_','시','라','솔','파','미','레','도','시','라')
+        </script>
+        <script>
+            function change(){
+                var a = document.getElementsByClassName("nopnat")
+                if(b==1){
+                    a[0].src="nat.png"
+                    b=0;
+                }else if(b==0){
+                    a[0].src="nop.png"
+                    b=1;
+                }
+            }
+            function over(a){
+             
+            }
+            function down(a){
+                
+            }
+            function stay(a, b){    
+                key2=b%18
+                var audio = new Audio(key1[key2]+'.mp3');
+                audio.currentTime=1.7;
+                audio.play();
+                var p = document.getElementsByClassName("um");
+                var btn2 = document.getElementsByClassName("btn");
+                if(a.innerHTML=="0"){
+                    a.innerHTML="#"
+                    setTimeout('asdf(1)', 300);
+                }else if(a.innerHTML=="#"){
+                    a.innerHTML="b"
+                    setTimeout('asdf(2)', 300);
+                }else if(a.innerHTML=="b"){
+                    a.innerHTML="_"
+                    a.style.opacity="100%";
+                    a.style.backgroundColor="#e5e5e5"
+                }else if(a.innerHTML=="_"){
+                    a.innerHTML="0";
+                    a.style.opacity="100%"
+                    a.style.background="#444444"
+                    setTimeout('asdf(3)', 300); 
+                }   
+            }
+            function asdf(a){
+                if(a==3){
+                    var p = document.getElementsByClassName("um");
+                    p[c].innerHTML=key1[key2]+"";
+                }else if(a==1){
+                    var p = document.getElementsByClassName("um");
+                    p[c].innerHTML=key1[key2]+"#";
+                }else if(a==2){
+                    var p = document.getElementsByClassName("um");
+                    p[c].innerHTML=key1[key2]+"b";
+                }
+            }
+        </script>
+    </head>
+    <body oncontextmenu='return false'>
+        <br><br><br>
+        <div class="box">
+            <hr class="jum"><br><hr class="jum"><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr class="jum"><br><hr class="jum">
+        </div>
+        <button onmousedown="change()" class="in" type="button"><img class="nopnat" src="nop.png"></button>
+            
+            <span class="in2" onmouseover="over(1)" onmouseout="down(1)"  onmousedown="c=0;on[0]=1">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+             </span>
+             <span class="in3" onmouseover="over(2)" onmouseout="down(2)" onmousedown="on[1]=1"onclick="c=1">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in4" onmouseover="over(3)" onmouseout="down(3)" onmousedown="on[2]=1"onclick="c=2">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in5" onmouseover="over(4)" onmouseout="down(4)" onmousedown="on[3]=1"onclick="c=3">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in6" onmouseover="over(5)" onmouseout="down(5)" onmousedown="on[4]=1"onclick="c=4">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in7" onmouseover="over(6)" onmouseout="down(6)" onmousedown="on[5]=1" onclick="c=5">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in8" onmouseover="over(7)" onmouseout="down(7)" onmousedown="on[6]=1"onclick="c=6">
+               <br><br><br>
+               <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in9" onmouseover="over(8)" onmouseout="down(8)" onmousedown="on[7]=1" onclick="c=7">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in10" onmouseover="over(9)" onmouseout="down(9)" onmousedown="on[8]=1"onclick="c=8">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in11" onmouseover="over(10)" onmouseout="down(10)" onmousedown="on[9]=1"onclick="c=9">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in12" onmouseover="over(11)" onmouseout="down(11)" onmousedown="on[10]=1"onclick="c=10">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in13" onmouseover="over(12)" onmouseout="down(12)" onmousedown="on[11]=1"onclick="c=11">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+        </span>
+            <span class="in14" onmouseover="over(13)" onmouseout="down(13)" onmousedown="on[12]=1"onclick="c=12">
+                <br><br><br>
+               <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in15" onmouseover="over(14)" onmouseout="down(14)" onmousedown="on[13]=1"onclick="c=13">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+            <span class="in16" onmouseover="over(15)" onmouseout="down(15)" onmousedown="on[14]=1"onclick="c=14">
+                <br><br><br>
+                <button class="btn" width="10px" onmousedown="stay(this,1)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,2)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,3)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,4)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,5)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,6)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,7)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,8)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,9)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,10)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,11)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,12)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,13)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,14)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,15)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,16)">_</button><br>
+                <button class="btn" width="10px" onmousedown="stay(this,17)">_</button><br><p class="um"></p>
+            </span>
+    </body>
+</html>
